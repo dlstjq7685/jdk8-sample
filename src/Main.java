@@ -1,5 +1,6 @@
 import com.ysd.classes.animal;
 import com.ysd.classes.ego;
+import com.ysd.data.basic;
 
 public class Main {
 
@@ -7,8 +8,9 @@ public class Main {
         System.out.println("hello world!");
         //slack test
 
-        ego a = new animal("Test");
-        a.pattern();
+        basic tutorial1 = new basic();
+        //ego a = new animal("Test");
+        //a.pattern();
 
     }
 }
