@@ -1,5 +1,5 @@
-import com.ysd.classes.animal;
-import com.ysd.classes.ego;
+import com.ysd.classes.human;
+import com.ysd.classes.interfaces;
 import com.ysd.data.basic;
 
 public class Main {
@@ -9,8 +9,8 @@ public class Main {
         //slack test
 
         basic tutorial1 = new basic();
-        //ego a = new animal("Test");
-        //a.pattern();
 
+        interfaces human = new human("jack");
+        human.say();
     }
 }
