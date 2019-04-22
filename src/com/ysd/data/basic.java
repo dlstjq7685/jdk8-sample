@@ -17,6 +17,9 @@ public class basic {
     boolean flag = true; // Boolean
     byte b = 127; //Byte
 
+    //Non Primitive
+    Integer intObject = 10;
+
     public basic() {
         //Number
         System.out.println("Integer: " + num);
@@ -46,5 +49,14 @@ public class basic {
         }
 
         System.out.println("Byte: "+ b);
+        System.out.println();
+
+        //Non Primitive
+        System.out.println("Integer:");
+        System.out.println(intObject.doubleValue());
+        String input = "1024";
+        int intNum = Integer.parseInt(input);
+        System.out.println(intNum*4);
+        System.out.println(Integer.MAX_VALUE);
     }
 }
