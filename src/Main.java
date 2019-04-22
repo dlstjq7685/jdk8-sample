@@ -1,5 +1,3 @@
-import com.ysd.classes.human;
-import com.ysd.classes.interfaces;
 import com.ysd.data.basic;
 
 public class Main {
@@ -10,7 +8,5 @@ public class Main {
 
         basic tutorial1 = new basic();
 
-        interfaces human = new human("jack");
-        human.say();
     }
 }
