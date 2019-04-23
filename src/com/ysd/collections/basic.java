@@ -46,5 +46,21 @@ public class basic {
         hm = new HashMap();
         tm = new TreeMap();
         lhm = new LinkedHashMap();
+
+        Set<String> color = new HashSet<>();
+
+        color.add("red");
+        color.add("yellow");
+        color.add("blue");
+
+        color.forEach(c -> System.out.println(c));
+
+        //Auto sort
+        Set<Integer> num = new TreeSet<>();
+        num.add(3);
+        num.add(1);
+        num.add(10);
+
+        num.forEach(n -> System.out.println(n));
     }
 }
