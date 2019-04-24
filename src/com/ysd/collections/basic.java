@@ -62,5 +62,40 @@ public class basic {
         num.add(10);
 
         num.forEach(n -> System.out.println(n));
+
+        Map<String,String> ani = new HashMap<>();
+        ani.put("jojo","jotaro");
+        ani.put("monogatari","shinobu");
+        ani.put("gundam","amuro");
+
+        System.out.println(ani);
+
+        List<String> names = new LinkedList<>();
+
+        names.add("dio");
+        names.add("SPW");
+        names.add("jonadan");
+
+        System.out.println(names);
+
+        Deque<Integer> stack = new ArrayDeque<>();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+        stack.push(5);
+
+        stack.offer(6);
+
+        System.out.println(stack);
+        System.out.println(stack.pop());
+
+        System.out.println(stack);
+        System.out.println(stack.peek());
+
+        System.out.println(stack);
+        System.out.println(stack.poll());
+
+        System.out.println(stack);
     }
 }
