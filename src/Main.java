@@ -8,7 +8,8 @@ public class Main {
 
         basic tutorial1 = new basic();
 
-        com.ysd.sysInOut.files.basic b = new com.ysd.sysInOut.files.basic();
+        com.ysd.threads.basic b = new com.ysd.threads.basic();
+
 
     }
 }
