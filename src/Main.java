@@ -8,9 +8,7 @@ public class Main {
 
         basic tutorial1 = new basic();
 
-
-        com.ysd.lambda.basic b = new com.ysd.lambda.basic();
-
+        com.ysd.Calendar.basic b = new com.ysd.Calendar.basic();
 
     }
 }
