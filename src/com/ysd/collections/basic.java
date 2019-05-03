@@ -1,8 +1,11 @@
 package com.ysd.collections;
 
+import com.ysd.start;
+
+import java.text.Collator;
 import java.util.*;
 
-public class basic {
+public class basic implements start {
 
     /*
         HashSet
@@ -46,7 +49,11 @@ public class basic {
         hm = new HashMap();
         tm = new TreeMap();
         lhm = new LinkedHashMap();
+    }
 
+    @Override
+    public void run() {
+        //basic usage
         Set<String> color = new HashSet<>();
 
         color.add("red");
@@ -97,5 +104,34 @@ public class basic {
         System.out.println(stack.poll());
 
         System.out.println(stack);
+        System.out.println();
+
+        //sort method usage
+        al.add(5);
+        al.add(3);
+        al.add(50);
+        al.add(1);
+        al.add(8);
+        al.add(7);
+        al.add(12);
+        System.out.println(al);
+        Collections.sort(al);
+        System.out.println(al);
+
+        ll.add("C-lang");
+        ll.add("Java");
+        ll.add("Python");
+        ll.add("JavaScript");
+        System.out.println();
+        System.out.println(ll);
+        Collections.sort(ll, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                //set languages config Collator.getInstance(Locale.JAPANESE)
+                return Collator.getInstance().compare(o1,o2);
+            }
+        });
+        System.out.println(ll);
+
     }
 }

@@ -1,13 +1,16 @@
 package com.ysd.Calendar;
 
+import com.ysd.start;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class basic {
 
-    public basic(){
+public class basic  implements start {
 
+    @Override
+    public void run() {
         System.out.println("Calender-test");
 
         //JDK version 211 over

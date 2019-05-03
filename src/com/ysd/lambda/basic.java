@@ -1,5 +1,7 @@
 package com.ysd.lambda;
 
+import com.ysd.start;
+
 interface NumbericTest{
     boolean computeTest(int n);
 }
@@ -13,10 +15,10 @@ interface MyGeneric<T> {
 }
 
 
-public class basic {
+public class basic implements start {
 
-    public basic(){
-
+    @Override
+    public void run() {
         NumbericTest isEven = (n) -> (n % 2) == 0;
         NumbericTest isNegative = (n) -> (n < 0);
 

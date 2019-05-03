@@ -1,5 +1,7 @@
 package com.ysd.threads;
 
+import com.ysd.start;
+
 /*
     What is multi-thread system?
         アプリ中で複数のタスク(機能)を同時に走らせる
@@ -11,9 +13,10 @@ package com.ysd.threads;
             server accept
 
  */
-public class basic {
+public class basic implements start {
 
-    public basic(){
+    @Override
+    public void run() {
         child c1 = new child();
         child c2 = new child();
 
@@ -22,6 +25,5 @@ public class basic {
 
         c1.run();
         c2.run();
-
     }
 }

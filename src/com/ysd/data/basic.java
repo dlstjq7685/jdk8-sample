@@ -1,26 +1,44 @@
 package com.ysd.data;
 
-public class basic {
+import com.ysd.start;
+
+public class basic implements start{
+
     //Number
-    int num = 1;  //Integer
-    float fnum = 5.0f / 3;  //Float
-    double dnum = 5.0 / 3;  //Double
-    short snum = 32767;  //Short
-    long lnum = 9223372036854775807L;  //Long
+    private int num;  //Integer
+    private float fnum;  //Float
+    private double dnum;  //Double
+    private short snum;  //Short
+    private long lnum;  //Long
 
     //Character
-    char c = 'A';  //Character
-    String str = "Apple";  //String
-    StringBuilder strb = new StringBuilder();  //StringBuilder
+    private char c;  //Character
+    private String str;  //String
+    private StringBuilder strb;  //StringBuilder
 
     //Other
-    boolean flag = true; // Boolean
-    byte b = 127; //Byte
+    private boolean flag; // Boolean
+    private byte b; //Byte
 
     //Non Primitive
-    Integer intObject = 10;
+    private Integer intObject;
 
     public basic() {
+        num = 1;
+        fnum = 5.0f / 3;
+        dnum = 5.0 / 3;
+        snum = 32767;
+        lnum = 9223372036854775807L;
+        c = 'A';
+        str = "Apple";
+        strb = new StringBuilder();
+        flag = true;
+        b = 127;
+        intObject = 10;
+    }
+
+    @Override
+    public void run() {
         //Number
         System.out.println("Integer: " + num);
         System.out.println("Float: " + fnum);
@@ -58,5 +76,6 @@ public class basic {
         int intNum = Integer.parseInt(input);
         System.out.println(intNum*4);
         System.out.println(Integer.MAX_VALUE);
+
     }
 }

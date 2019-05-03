@@ -1,8 +1,11 @@
 package com.ysd.classes;
 
-public class basic {
+import com.ysd.start;
 
-    public basic(){
+public class basic implements start {
+
+    @Override
+    public void run() {
         bird b = new bird("tori");
         cat c = new cat("kuroneko");
         dog d = new dog("siba");

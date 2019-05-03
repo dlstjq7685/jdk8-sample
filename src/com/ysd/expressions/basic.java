@@ -1,10 +1,13 @@
 package com.ysd.expressions;
 
-public class basic {
+import com.ysd.start;
+
+public class basic implements start {
     private int num;
     private int num2;
 
-    public basic() {
+    @Override
+    public void run() {
         //---演算子---
         num = 10 + 5;  //加算
         System.out.println("10 + 5 = " + num);

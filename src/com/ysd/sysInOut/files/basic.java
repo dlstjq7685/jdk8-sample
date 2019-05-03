@@ -1,11 +1,13 @@
 package com.ysd.sysInOut.files;
 
+import com.ysd.start;
+
 import java.io.*;
 
-public class basic {
+public class basic implements start {
 
-    public basic(){
-
+    @Override
+    public void run() {
         System.out.println("file tutorials");
 
         File file = new File(".\\file-tutorial.txt");

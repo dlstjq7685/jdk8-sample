@@ -1,11 +1,13 @@
 package com.ysd.Log;
 
+import com.ysd.start;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.TimeZone;
 import java.util.logging.*;
 
-public class basic {
+public class basic implements start{
 
     final Logger L = Logger.getLogger(this.getClass().getName());
     final String Log_path = ".\\sample.log";
@@ -33,12 +35,6 @@ public class basic {
             e.printStackTrace();
         }
 
-        //Test log print
-        L.info("test");
-        L.config("test");
-        L.fine("test");
-        L.warning("test");
-        L.severe("test");
     }
 
     public void Config_log(String meg){
@@ -74,4 +70,14 @@ public class basic {
         }
     }
 
+    @Override
+    public void run() {
+        //Test log print
+        L.info("test");
+        L.config("test");
+        L.fine("test");
+        L.warning("test");
+        L.severe("test");
+
+    }
 }
