@@ -6,50 +6,87 @@ import java.io.*;
 
 public class basic implements start {
 
-    @Override
-    public void run() {
-        System.out.println("file tutorials");
+    private File file;
+    private BufferedReader  read;
+    private FileOutputStream write;
 
-        File file = new File(".\\file-tutorial.txt");
+    public basic(){
+        file = new File(".\\file-tutorial.txt");
+    }
 
+    private void fileCheck(){
         if(!file.exists()){
             try {
                 file.createNewFile();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }else{
-            if(file.length() != 0){
-
-                try {
-                    FileInputStream read = new FileInputStream(file);
-
-                    int meg;
-                    while ((meg = read.read()) != -1){
-                        System.out.println(meg);
-                    }
-
-                    read.close();
-
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
         }
+    }
 
+    private void getFileInputStream(){
         try {
-            FileOutputStream write = new FileOutputStream (file);
-
-            write.write(97);
-
-            write.close();
-
+            FileReader fr = new FileReader(file);
+            read = new BufferedReader(fr);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+        }
+    }
+
+    private void getFileOutputStream(){
+        try {
+            write = new FileOutputStream (file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private String read_line() {
+        try {
+            return read.readLine();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return null;
+    }
+
+    private void write_line(byte...line){
+        try {
+            write.write(line);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void file_close(){
+        try {
+            read.close();
+            write.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Override
+    public void run() {
+        System.out.println("file tutorials");
+
+
+        fileCheck();
+
+        if(file.length() != 0){
+            getFileInputStream();
+
+            String buffer;
+            while((buffer = read_line()) != null)
+                System.out.println(buffer);
+
+        }
+
+        getFileOutputStream();
+        write_line("test\n".getBytes());
+        write_line("test1".getBytes());
+        file_close();
     }
 }
