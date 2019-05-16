@@ -1,4 +1,14 @@
 package com.ysd.xml;
 
-public class Basic {
+import com.ysd.start;
+
+public class Basic implements start {
+
+
+
+
+    @Override
+    public void run() {
+
+    }
 }
