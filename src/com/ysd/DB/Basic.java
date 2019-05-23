@@ -2,10 +2,9 @@ package com.ysd.DB;
 
 import com.ysd.start;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.Collections;
+import java.util.stream.Stream;
 
 public class Basic implements start {
 
@@ -13,8 +12,16 @@ public class Basic implements start {
     private final String dbPath = "jdbc:sqlite:test.db";
     private Statement stmt = null;
 
-    private void connectionDB(){
+    //sql injection prevent tech
+    //1. Parameterized Queries
+    //only works for placeholders used as values
+    private PreparedStatement p;
 
+    //2. User Data Sanitization: filtering string
+    //Data Sanitization is a technique of applying a filter to user supplied-data so it can be safely used by other parts of our application
+
+
+    private void connectionDB(){
         try {
             Class.forName("org.sqlite.JDBC");
             c = DriverManager.getConnection(dbPath);
@@ -84,6 +91,19 @@ public class Basic implements start {
             System.exit(0);
         }
         System.out.println("Records created successfully");
+
+    }
+
+    private void prevnetSelect(String sql){
+
+        try {
+            p = c.prepareStatement("mysql");
+            p.setString(1,sql);
+            ResultSet rs = p.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
 
     }
 
